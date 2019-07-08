@@ -65,6 +65,7 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
     if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
         list(APPEND CMP_INCLUDE_DIRS "/usr/local/ilmbase22build/include/OpenEXR/")
         list(APPEND CMP_INCLUDE_DIRS "/usr/local/openexr22build/include/OpenEXR/")
+        list(APPEND CMP_INCLUDE_DIRS "/usr/include/OpenEXR")
     endif()
 elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     list(APPEND CMP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/Boost/boost_1_59_0/")

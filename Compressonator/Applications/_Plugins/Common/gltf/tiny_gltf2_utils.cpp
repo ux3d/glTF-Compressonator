@@ -3988,7 +3988,7 @@ namespace tinygltf2
                         }
                         else
                         {
-                            printf("Draco encode failed: Attribute [%s] not supported yet.\n", khrattrIt->first);
+                            printf("Draco encode failed: Attribute [%s] not supported yet.\n", khrattrIt->first.c_str());
                             return false;
                         }
 

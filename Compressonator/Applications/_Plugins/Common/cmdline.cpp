@@ -1054,7 +1054,7 @@ bool OptimizeMesh(std::string SourceFile, std::string DestFile)
     }
     else
     {
-        PrintInfo("[Mesh Optimization] Loading file error.: %s\n.", SourceFile);
+        PrintInfo("[Mesh Optimization] Loading file error.: %s\n.", SourceFile.c_str());
         if (plugin_loader)
         {
             delete plugin_loader;
