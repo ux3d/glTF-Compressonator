@@ -27,7 +27,7 @@ set (CMP_INCLUDE_DIRS "")
 # Qt5 include path - users install required
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-message("Finding Package Qt5 (Qt5Core and Qt5Gui). if not found, for Ubuntu, run initsetup_ubuntu.sh to install. For mac,  run initsetup_mac.sh to install. For window, please make sure install qt5.7 and add the bin path (i.e. C:/Qt/5.7/msvc2015_64/bin) to your environment PATH.")  
+message("Finding Package Qt5 (Qt5Core and Qt5Gui). if not found, for Ubuntu, run initsetup_ubuntu.sh to install. For mac,  run initsetup_mac.sh to install. For window, please make sure install qt5.7 and add the bin path (i.e. C:/Qt/5.7/msvc2015_64/bin) to your environment PATH.")
 
 find_package(Qt5Core)
 if(Qt5Core_FOUND)
@@ -45,21 +45,21 @@ message(FATAL_ERROR "Package Qt5 (Qt5Gui) are required, but not found. In Unix, 
 endif()
 
 # boost and openexr include paths
-if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin") 
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
     message("Finding Package Boost and OpenCV. if not found, for Ubuntu, run initsetup_ubuntu.sh to install. For mac,  run initsetup_mac.sh to install.")
 
-    find_package(Boost COMPONENTS system filesystem) 
+    find_package(Boost COMPONENTS system filesystem)
     if(Boost_FOUND)
-        list(APPEND CMP_INCLUDE_DIR ${Boost_INCLUDE_DIRS}) 
+        list(APPEND CMP_INCLUDE_DIR ${Boost_INCLUDE_DIRS})
     endif()
-    
-    find_package(OpenCV) 
+
+    find_package(OpenCV)
     if (OpenCV_FOUND)
         list(APPEND CMP_INCLUDE_DIR ${OpenCV_INCLUDE_DIRS})
     else()
         message(FATAL_ERROR "Package OpenCV are required, but not found. In Unix, run initsetup_unix.sh to install the prerequisite libs.")
     endif()
-    
+
     list(APPEND CMP_INCLUDE_DIRS "/usr/local/include/OpenEXR/")
     #build openexr from cmake
     if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
@@ -69,7 +69,7 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     list(APPEND CMP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/Boost/boost_1_59_0/")
     list(APPEND CMP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/OpenEXR/openexr-2.2.0/VS2015/x64/include/OpenEXR/")
     list(APPEND CMP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/OpenEXR/ilmbase-2.2.0/VS2015/x64/include/OpenEXR/")
-	
+
 endif()
 
 list(APPEND CMP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/Common/")
@@ -106,7 +106,7 @@ list (APPEND CMP_SOURCES1 "${CMAKE_CURRENT_SOURCE_DIR}/../Source/CompressonatorC
 
 add_executable(CompressonatorCLI ${CMP_SOURCES1} ${CMP_MESHOPT_SRC})
 
-# (ubuntu only)uncomment below to rebuild all the dependency libraries from cmake 
+# (ubuntu only)uncomment below to rebuild all the dependency libraries from cmake
 #if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 #add_dependencies(CompressonatorCLI dependencyLibs)
 #endif()
@@ -115,14 +115,14 @@ add_executable(CompressonatorCLI ${CMP_SOURCES1} ${CMP_MESHOPT_SRC})
 set (CMP_LIBS "")
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
-    
-    find_package(OpenCV) 
+
+    find_package(OpenCV)
     if (OpenCV_FOUND)
         list(APPEND CMP_LIBS ${OpenCV_LIBRARIES})
     else()
         message(FATAL_ERROR "Package OpenCV are required, but not found. In Unix, run initsetup_unix.sh to install the prerequisite libs.")
     endif()
-    find_package(Boost COMPONENTS system filesystem) 
+    find_package(Boost COMPONENTS system filesystem)
     if(Boost_FOUND)
         list(APPEND CMP_LIBS ${Boost_LIBRARIES})
     endif()
@@ -140,9 +140,9 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
         list(APPEND CMP_LIBS "/usr/lib/libIlmImf.so")
     elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         list(APPEND CMP_LIBS "/usr/lib/libz.dylib")
-        
+
         #list(APPEND CMP_LIBS "/usr/lib/libboost_filesystem.a")
-        #list(APPEND CMP_LIBS "/usr/lib/libboost_system.a") 
+        #list(APPEND CMP_LIBS "/usr/lib/libboost_system.a")
 
         list(APPEND CMP_LIBS "/usr/local/lib/libHalf.dylib")
         list(APPEND CMP_LIBS "/usr/local/lib/libImath.dylib")
@@ -153,17 +153,17 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
 
     list(APPEND CMP_LIBS "Compressonator")
     list(APPEND CMP_LIBS "BoxFilter")
-    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CImage/ASTC/Make/libASTC.a")
-    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CImage/DDS/Make/libDDS.a")
-    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CImage/EXR/Make/libEXR.a")
-    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CImage/TGA/Make/libTGA.a")
-    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CImage/KTX/Make/libKTX.a")
+    list(APPEND CMP_LIBS "ASTC")
+    list(APPEND CMP_LIBS "DDS")
+    list(APPEND CMP_LIBS "EXR")
+    list(APPEND CMP_LIBS "TGA")
+    list(APPEND CMP_LIBS "KTX")
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CAnalysis/Analysis/Make/libIMGAnalysis.a")
     if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
         list(APPEND CMP_LIBS "/usr/lib/libz.a")
         list(APPEND CMP_LIBS "/usr/lib/libpthread.so")
     endif()
-    
+
     find_package(GLEW)
     if (GLEW_FOUND)
         list(APPEND CMP_LIBS ${GLEW_LIBRARIES})
@@ -171,7 +171,7 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
         message(FATAL_ERROR "Package glew are required, but not found. In Unix, run initsetup_unix.sh to install the prerequisite libs.")
     endif()
 
-    target_link_libraries(CompressonatorCLI ${CMP_LIBS} Qt5::Core Qt5::Gui) 
+    target_link_libraries(CompressonatorCLI ${CMP_LIBS} Qt5::Core Qt5::Gui)
 
 elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
@@ -179,7 +179,7 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/zlib/zlib-1.2.10/VS2015/x64/lib/zlibstatic.lib")
 
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/Boost/boost_1_59_0/lib/VC14/x86_64/libboost_filesystem-vc140-mt-1_59.lib")
-    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/Boost/boost_1_59_0/lib/VC14/x86_64/libboost_system-vc140-mt-1_59.lib") 
+    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/Boost/boost_1_59_0/lib/VC14/x86_64/libboost_system-vc140-mt-1_59.lib")
 
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/OpenEXR/ilmbase-2.2.0/VS2015/x64/lib/Half.lib")
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../Common/Lib/Ext/OpenEXR/ilmbase-2.2.0/VS2015/x64/lib/Imath.lib")
@@ -206,5 +206,5 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
     find_package(Qt5Widgets)
 
-    target_link_libraries(CompressonatorCLI ${CMP_LIBS} Qt5::Core Qt5::Gui Qt5::Widgets) 
+    target_link_libraries(CompressonatorCLI ${CMP_LIBS} Qt5::Core Qt5::Gui Qt5::Widgets)
 endif()

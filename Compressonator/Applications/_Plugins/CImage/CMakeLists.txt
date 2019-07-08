@@ -1,0 +1,5 @@
+add_subdirectory("ASTC/Make")
+add_subdirectory("DDS/Make")
+add_subdirectory("EXR/Make")
+add_subdirectory("TGA/Make")
+add_subdirectory("KTX/Make")
