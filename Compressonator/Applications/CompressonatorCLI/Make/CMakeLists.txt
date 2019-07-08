@@ -63,8 +63,6 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
     list(APPEND CMP_INCLUDE_DIRS "/usr/local/include/OpenEXR/")
     #build openexr from cmake
     if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-        list(APPEND CMP_INCLUDE_DIRS "/usr/local/ilmbase22build/include/OpenEXR/")
-        list(APPEND CMP_INCLUDE_DIRS "/usr/local/openexr22build/include/OpenEXR/")
         list(APPEND CMP_INCLUDE_DIRS "/usr/include/OpenEXR")
     endif()
 elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
@@ -130,16 +128,16 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
     endif()
 
 	if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-        list(APPEND CMP_LIBS "/usr/lib/x86_64-linux-gnu/libz.a")
+        list(APPEND CMP_LIBS "usr/lib/libz.a")
 
         #list(APPEND CMP_LIBS "/usr/lib/x86_64-linux-gnu/libboost_filesystem.a")
-        #list(APPEND CMP_LIBS "/usr/lib/x86_64-linux-gnu/libboost_system.a") 
+        #list(APPEND CMP_LIBS "/usr/lib/x86_64-linux-gnu/libboost_system.a")
 
-        list(APPEND CMP_LIBS "/usr/local/ilmbase22build/lib/libHalf.so")
-        list(APPEND CMP_LIBS "/usr/local/ilmbase22build/lib/libImath-2_2.so")
-        list(APPEND CMP_LIBS "/usr/local/ilmbase22build/lib/libIlmThread-2_2.so")
-        list(APPEND CMP_LIBS "/usr/local/ilmbase22build/lib/libIex-2_2.so")
-        list(APPEND CMP_LIBS "/usr/local/openexr22build/lib/libIlmImf-2_2.so")
+        list(APPEND CMP_LIBS "/usr/lib/libHalf.so")
+        list(APPEND CMP_LIBS "/usr/lib/libImath.so")
+        list(APPEND CMP_LIBS "/usr/lib/libIlmThread.so")
+        list(APPEND CMP_LIBS "/usr/lib/libIex.so")
+        list(APPEND CMP_LIBS "/usr/lib/libIlmImf.so")
     elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         list(APPEND CMP_LIBS "/usr/lib/libz.dylib")
         
@@ -162,8 +160,8 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CImage/KTX/Make/libKTX.a")
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CAnalysis/Analysis/Make/libIMGAnalysis.a")
     if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-        list(APPEND CMP_LIBS "/usr/lib/x86_64-linux-gnu/libz.a")
-        list(APPEND CMP_LIBS "/usr/lib/x86_64-linux-gnu/libpthread.so")
+        list(APPEND CMP_LIBS "/usr/lib/libz.a")
+        list(APPEND CMP_LIBS "/usr/lib/libpthread.so")
     endif()
     
     find_package(GLEW)
