@@ -158,7 +158,7 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
     list(APPEND CMP_LIBS "EXR")
     list(APPEND CMP_LIBS "TGA")
     list(APPEND CMP_LIBS "KTX")
-    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CAnalysis/Analysis/Make/libIMGAnalysis.a")
+    list(APPEND CMP_LIBS "IMGAnalysis")
     if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
         list(APPEND CMP_LIBS "/usr/lib/libz.a")
         list(APPEND CMP_LIBS "/usr/lib/libpthread.so")
