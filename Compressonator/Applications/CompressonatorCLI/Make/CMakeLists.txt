@@ -128,7 +128,7 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
     endif()
 
 	if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-        list(APPEND CMP_LIBS "usr/lib/libz.a")
+        list(APPEND CMP_LIBS "/usr/lib/libz.a")
 
         #list(APPEND CMP_LIBS "/usr/lib/x86_64-linux-gnu/libboost_filesystem.a")
         #list(APPEND CMP_LIBS "/usr/lib/x86_64-linux-gnu/libboost_system.a")
