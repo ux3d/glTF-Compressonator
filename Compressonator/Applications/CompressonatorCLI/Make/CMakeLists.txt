@@ -150,8 +150,8 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Darwi
         list(APPEND CMP_LIBS "/usr/local/lib/libIex.dylib")
         list(APPEND CMP_LIBS "/usr/local/lib/libIlmImf.dylib")
     endif()
-    
-    list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../../Make/libCompressonator.a")
+
+    list(APPEND CMP_LIBS "Compressonator")
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CFilter/Make/libBoxFilter.a")
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CImage/ASTC/Make/libASTC.a")
     list(APPEND CMP_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/../../_Plugins/CImage/DDS/Make/libDDS.a")
