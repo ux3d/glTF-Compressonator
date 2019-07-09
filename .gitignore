@@ -11,3 +11,5 @@ Compressonator/Applications/CompressonatorCLI/Make/buildCLI_linux_package.sh
 *.VC.db
 *.VC.VC.opendb
 *.pdb
+
+cmake-build-debug/

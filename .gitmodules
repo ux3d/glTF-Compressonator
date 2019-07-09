@@ -23,3 +23,6 @@
 	path = Common/Lib/Ext/OpenEXR
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-OpenEXR-2.2.git
 
+[submodule "Thirdparty/openexr"]
+	path = Thirdparty/openexr
+	url = git://github.com/openexr/openexr.git
