@@ -147,7 +147,7 @@ namespace GPU_Decode
         // List of shader modules created (stored for cleanup)
         std::vector<VkShaderModule> shaderModules;
 
-        // List of functions used for loading compressed texture and decode view in compressonator gui
+        // List of functions used for loading compressed texture and decode view in compress gui
         VkResult createInstance(bool enableValidation);
         VkResult createDevice(VkDeviceQueueCreateInfo requestedQueues, bool enableValidation);
         bool initVulkan(bool enableValidation);

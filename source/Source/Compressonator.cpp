@@ -26,7 +26,7 @@
 //  Revisions
 //  Feb 2016    -   Fix Parameter processing & Swizzle issue for DXTC Codecs
 //  Jan 2016    -   Added ASTC support - 
-//  Jan 2014    -   Completed support for BC6H and Command line options for new compressonator
+//  Jan 2014    -   Completed support for BC6H and Command line options for new compress
 //  Apr 2014    -   Refactored Library
 //                  Code clean to support MSV 2010 and up
 //////////////////////////////////////////////////////////////////////////////

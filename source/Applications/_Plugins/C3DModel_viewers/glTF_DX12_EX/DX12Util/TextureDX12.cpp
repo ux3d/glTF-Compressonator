@@ -626,7 +626,7 @@ INT32 TextureDX12::InitFromFile(ID3D12Device* pDevice, UploadHeapDX12* pUploadHe
 
                if (mipLevel->m_pbData == NULL) return -1;
 
-               // read compressonator mipset buffer
+               // read compress mipset buffer
                unsigned char *pData = &pixels[pPlacedTex2D[mip].Offset];
                for (UINT y = 0; y < h; ++y)
                {

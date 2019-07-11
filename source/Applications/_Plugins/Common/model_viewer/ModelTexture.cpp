@@ -76,7 +76,7 @@ INT32 ModelTexture::LoadImageMipSetFromFile(const WCHAR *pFilename, void *plugin
 
     try
     {
-        // get the ext and load image with amd compressonator image plugin
+        // get the ext and load image with amd compress image plugin
         char *fileExt;
         wstring ws(pFilename);
         string sFilename(ws.begin(), ws.end());

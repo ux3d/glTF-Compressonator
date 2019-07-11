@@ -259,7 +259,7 @@ void PrintUsage()
     printf("\n\n");
     printf("-diff_image <image1> <image2> Generate difference between 2 images with same size \n");
     printf(
-        "                              A .bmp file will be generated. Please use compressonator GUI to increase the contrast to view the diff "
+        "                              A .bmp file will be generated. Please use compress GUI to increase the contrast to view the diff "
         "pixels.\n");
     printf("\n\n");
     printf("-imageprops <image>           Print image properties of image files specifies. \n");
