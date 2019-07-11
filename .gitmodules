@@ -4,25 +4,12 @@
 [submodule "third_party/Lib/Ext/OpenGL"]
 	path = third_party/OpenGL
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-OpenGL.git
-[submodule "third_party/Lib/Ext/OpenCV"]
-	path = third_party/OpenCV
-	url = https://github.com/GPUOpen-Tools/common-lib-ext-OpenCV-2.49.git
-[submodule "third_party/Lib/Ext/Boost"]
-	path = third_party/Boost
-	url = https://github.com/GPUOpen-Tools/common-lib-ext-Boost-1.59.git
 [submodule "third_party/Lib/AMD/APPSDK"]
 	path = third_party/APPSDK
 	url = https://github.com/GPUOpen-Tools/common-lib-amd-APPSDK-3.0.git
 [submodule "third_party/Lib/Ext/glew"]
 	path = third_party/glew
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-glew-1.9.git
-[submodule "third_party/Lib/Ext/zlib"]
-	path = third_party/zlib
-	url = https://github.com/GPUOpen-Tools/common-lib-ext-zlib-1.2.10.git
-[submodule "third_party/Lib/Ext/OpenEXR"]
-	path = third_party/OpenEXR
-	url = https://github.com/GPUOpen-Tools/common-lib-ext-OpenEXR-2.2.git
-
 [submodule "third_party/Draco"]
 	path = third_party/draco
 	url = https://github.com/google/draco.git
