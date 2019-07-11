@@ -26,8 +26,8 @@
 
 #ifdef _WIN32
 #ifndef DISABLE_TESTCODE
-#include "GPU_DecodeBase.h"
-#include "GPU_Decode.h"
+#include "decode/GPU_DecodeBase.h"
+#include "decode/GPU_Decode.h"
 #include "PluginInterface.h"
 
 extern PluginManager    g_pluginManager;

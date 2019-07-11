@@ -26,8 +26,8 @@
 
 #ifdef _WIN32
 #ifndef DISABLE_TESTCODE
-#include "Compressonator.h"
-#include "GPU_DecodeBase.h"
+#include "decode/Compressonator.h"
+#include "decode/GPU_DecodeBase.h"
 #include "MIPS.h"
 
 using namespace GPU_Decode;
