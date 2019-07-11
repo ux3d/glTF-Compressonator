@@ -51,9 +51,9 @@ list (APPEND CMP_SOURCES1 "${CMAKE_CURRENT_SOURCE_DIR}/../DDS_DX10.cpp")
 list (APPEND CMP_SOURCES1 "${CMAKE_CURRENT_SOURCE_DIR}/../DDS_File.cpp")
 list (APPEND CMP_SOURCES1 "${CMAKE_CURRENT_SOURCE_DIR}/../DDS_Helpers.cpp")
 list (APPEND CMP_SOURCES1 "${CMAKE_CURRENT_SOURCE_DIR}/../stdafx.cpp")
-list (APPEND CMP_SOURCES1 "${CMAKE_CURRENT_SOURCE_DIR}/../../../Common/MIPS.cpp")
-list (APPEND CMP_SOURCES1 "${CMAKE_CURRENT_SOURCE_DIR}/../../../Common/TC_PluginInternal.cpp")
-list (APPEND CMP_SOURCES1 "${CMAKE_CURRENT_SOURCE_DIR}/../../../Common/UtilFuncs.cpp")
+list (APPEND CMP_SOURCES1 "../../../../../../plugin/common/MIPS.cpp")
+list (APPEND CMP_SOURCES1 "../../../../../../plugin/common/TC_PluginInternal.cpp")
+list (APPEND CMP_SOURCES1 "../../../../../../plugin/common/UtilFuncs.cpp")
 
 add_library(DDS STATIC ${CMP_SOURCES1})
 

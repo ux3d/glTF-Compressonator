@@ -24,8 +24,8 @@
 #if !defined(_CODEC_ASTC_H_INCLUDED_)
 #define _CODEC_ASTC_H_INCLUDED_
 
-#include "Compressonator.h"
-#include "Codec_DXTC.h"
+#include "common/Compressonator.h"
+#include "codec/DXTC/Codec_DXTC.h"
 #include "ASTC_Encode.h"
 #include "ASTC_Decode.h"
 #include "ASTC_Library.h"

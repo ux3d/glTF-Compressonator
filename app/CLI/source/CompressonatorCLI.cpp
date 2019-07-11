@@ -23,7 +23,7 @@
 #include <windows.h>
 #endif
 
-#include "cmdline.h"
+#include <boost/program_options/cmdline.hpp>
 #include "PluginManager.h"
 #include "TextureIO.h"
 #include "Version.h"

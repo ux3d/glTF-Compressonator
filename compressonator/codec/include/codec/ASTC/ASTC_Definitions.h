@@ -25,8 +25,8 @@
 #ifndef _ASTC_DEFINITIONS_H_
 #define _ASTC_DEFINITIONS_H_
 
-#include "astc_codec_internals.h"
-#include "softfloat.h"
+#include "codec/ASTC/ARM/astc_codec_internals.h"
+#include "codec/ASTC/ARM/softfloat.h"
 #include <stdio.h>
 #include <math.h>
 #include <cstdint>

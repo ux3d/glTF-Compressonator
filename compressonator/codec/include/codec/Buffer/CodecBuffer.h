@@ -29,12 +29,12 @@
 #ifndef _CODECBUFFER_H_INCLUDED_
 #define _CODECBUFFER_H_INCLUDED_
 
-#include "debug.h"
-
-#include "MathMacros.h"
+#include "common/debug.h"
+#include "common/Compressonator.h"
+#include "math/MathMacros.h"
 
 #pragma warning(disable:4244)
-#include "half.h"
+#include "OpenEXR/half.h"
 #pragma warning(default:4244)
 
 typedef enum _CodecBufferType

@@ -29,7 +29,7 @@
 #ifndef _Codec_ETC2_H_INCLUDED_
 #define _Codec_ETC2_H_INCLUDED_
 
-#include "Codec_Block_4x4.h"
+#include "codec/Block/Codec_Block_4x4.h"
 
 #define ATC_OFFSET_ALPHA 0
 #define ATC_OFFSET_RGB 2

@@ -18,7 +18,7 @@
 // Copyright (c) 2014-2017  Advanced Micro Devices, Inc. All rights reserved.
 //===========================================================================
 
-#include "Common_Kernel.h"
+#include "common/Common_Kernel.h"
 
 
 namespace ASTC_Encoder
@@ -63,7 +63,7 @@ namespace ASTC_Encoder
 
 #ifndef __OPENCL_VERSION__
 
-#include "vectypes.h"
+#include "codec/ASTC/ARM/vectypes.h"
 
 #define __constant          const
 #define __kernel 

@@ -22,12 +22,12 @@
 // THE SOFTWARE.
 //
 
-#include "stdafx.h"
+#include "plugin/stdafx.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include "MIPS.h"
+#include "plugin/MIPS.h"
 #include <assert.h>
-#include "TC_PluginInternal.h"
+#include "plugin/TC_PluginInternal.h"
 
 void(*PrintStatusLine)(char *) = NULL;
 

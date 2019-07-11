@@ -1,5 +1,5 @@
 
-#include "PSNR.h"
+#include "plugin/PSNR.h"
 
 // OpenCV (Open Source Computer Vision Library: http://opencv.org) is an open-source BSD-licensed library
 // http://docs.opencv.org/doc/tutorials/highgui/video-input-psnr-ssim/video-input-psnr-ssim.html

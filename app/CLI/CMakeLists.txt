@@ -8,10 +8,7 @@ add_include_folder("include" "target_includes")
 add_executable(compressonator "${target_sources}")
 target_include_directories(compressonator PUBLIC "${target_includes}")
 
-find_package(Boost)
-target_include_directories(compressonator PRIVATE ${Boost_INCLUDE_DIRS})
-target_link_libraries(compressonator PRIVATE ${Boost_LIBRARIES})
-
 target_link_libraries(compressonator PRIVATE comp)
+target_link_libraries(compressonator PRIVATE plugin)
 
 set_directory_structure(compressonator)

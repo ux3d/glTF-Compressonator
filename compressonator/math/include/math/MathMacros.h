@@ -2,13 +2,13 @@
 #define _MATH_MACROS_H_
 
 template <typename primNumType, typename secNumType>
-inline decltype(auto) min( const primNumType& a, const secNumType& b )
+inline auto min( const primNumType& a, const secNumType& b )
 {
     return ( a < b ? a : b );
 }
 
 template <typename primNumType, typename secNumType>
-inline decltype(auto) max( const primNumType& a, const secNumType& b )
+inline auto max( const primNumType& a, const secNumType& b )
 {
     return ( a > b ? a : b );
 }

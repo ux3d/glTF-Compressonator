@@ -28,8 +28,8 @@
 #ifndef _CODEC_BC7_H_INCLUDED_
 #define _CODEC_BC7_H_INCLUDED_
 
-#include "Compressonator.h"
-#include "Codec_DXTC.h"
+#include "common/Compressonator.h"
+#include "codec/DXTC/Codec_DXTC.h"
 #include "BC7_Encode.h"
 #include "BC7_Decode.h"
 #include "BC7_Library.h"

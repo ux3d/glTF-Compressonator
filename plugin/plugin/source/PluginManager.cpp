@@ -24,10 +24,10 @@
 //
 //=====================================================================
 
-#include "stdafx.h"
+#include "plugin/stdafx.h"
 #include "string.h"
-#include "PluginInterface.h"
-#include "PluginManager.h"
+#include "plugin/PluginInterface.h"
+#include "plugin/PluginManager.h"
 #include <boost/filesystem.hpp>
 
 #ifdef USE_NewLoader

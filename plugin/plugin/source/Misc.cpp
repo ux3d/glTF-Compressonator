@@ -17,8 +17,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#include "stdafx.h"
-#include "Misc.h"
+#include "plugin/stdafx.h"
+#include "plugin/Misc.h"
 
 
 double MillisecondsNow()

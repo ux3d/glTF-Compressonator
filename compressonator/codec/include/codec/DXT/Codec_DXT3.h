@@ -29,7 +29,7 @@
 #ifndef _CODEC_DXT3_H_INCLUDED_
 #define _CODEC_DXT3_H_INCLUDED_
 
-#include "Codec_DXTC.h"
+#include "codec/DXTC/Codec_DXTC.h"
 
 class CCodec_DXT3 : public CCodec_DXTC  
 {

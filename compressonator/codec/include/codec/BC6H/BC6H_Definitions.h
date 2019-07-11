@@ -25,13 +25,13 @@
 #ifndef _BC6H_DEFINITIONS_H_
 #define _BC6H_DEFINITIONS_H_
 
-#include "HDR_Encode.h"
+#include "common/HDR_Encode.h"
 
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
 
-typedef std::uint8_t byte;
+//typedef std::uint8_t byte;
 typedef std::uint8_t BYTE;
 typedef std::uint32_t DWORD;
 typedef std::int32_t BOOL;

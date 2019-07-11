@@ -28,8 +28,8 @@
 //                   Code clean to support MSV 2010 and up
 //////////////////////////////////////////////////////////////////////////////
         
-#include "Compressonator.h"
-#include "Compress.h"
+#include "compressonator/Compressonator.h"
+#include "compressonator/Compress.h"
 #include <assert.h>    
 
 #include <algorithm>

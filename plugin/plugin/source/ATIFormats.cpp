@@ -32,8 +32,8 @@
 #include <tchar.h>
 #endif
 
-#include "Compressonator.h"
-#include "ATIFormats.h"
+#include "compressonator/Compressonator.h"
+#include "plugin/ATIFormats.h"
 
 CMP_FormatDesc g_FormatDesc[] =
 {
