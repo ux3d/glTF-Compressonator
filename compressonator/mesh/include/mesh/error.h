@@ -14,7 +14,7 @@
 
 void error_output(const char* fmt, ...);
 
-#ifdef _LINUX
+#if defined(PLATFORM_IS_LINUX) || defined(PLATFORM_IS_MACOS)
 #define warnf(args)
 #define errorf(args)
 #define assertf(cond, args)
@@ -42,7 +42,7 @@ void error_output(const char* fmt, ...);
 #endif
 
 #ifndef ERROR_NDEBUG
-#ifdef _LINUX
+#if defined(PLATFORM_IS_LINUX) || defined(PLATFORM_IS_MACOS)
 #define debugf(args)
 #else
 #define debugf(args) do { \

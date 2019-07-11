@@ -3,9 +3,9 @@
 /// \author AMD Developer Tools Team
 /// \file
 ****************************************************************************************/
-#include "TootlePCH.h"
-#include "JRTCommon.h"
-#include "JRTBoundingBox.h"
+#include "mesh/TootlePCH.h"
+#include "mesh/JRT/JRTCommon.h"
+#include "mesh/JRT/JRTBoundingBox.h"
 #include <float.h>
 
 JRTBoundingBox::JRTBoundingBox(const float* positions, unsigned int num_points)

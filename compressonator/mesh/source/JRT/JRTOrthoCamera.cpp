@@ -3,10 +3,10 @@
 /// \author AMD Developer Tools Team
 /// \file
 ****************************************************************************************/
-#include "JRTCommon.h"
-#include "TootlePCH.h"
-#include "JRTCommon.h"
-#include "JRTOrthoCamera.h"
+#include "mesh/JRT/JRTCommon.h"
+#include "mesh/TootlePCH.h"
+#include "mesh/JRT/JRTCommon.h"
+#include "mesh/JRT/JRTOrthoCamera.h"
 
 JRTOrthoCamera::JRTOrthoCamera(const Vec3f& rPosition, const Vec3f& rDirection, const Vec3f& rUp, float fHorizontalSize)
     : m_position(rPosition), m_direction(rDirection), m_fSize(fHorizontalSize), m_fAspect(1)

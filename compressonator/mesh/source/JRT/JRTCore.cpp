@@ -3,15 +3,15 @@
 /// \author AMD Developer Tools Team
 /// \file
 ****************************************************************************************/
-#include "TootlePCH.h"
-#include "JRTCommon.h"
-#include "JRTCore.h"
-#include "JRTMesh.h"
+#include "mesh/TootlePCH.h"
+#include "mesh/JRT/JRTCommon.h"
+#include "mesh/JRT/JRTCore.h"
+#include "mesh/JRT/JRTMesh.h"
 
-#include "JRTKDTree.h"
-#include "JRTKDTreeBuilder.h"
-#include "JRTHeuristicKDTreeBuilder.h"
-#include "JRTH2KDTreeBuilder.h"
+#include "mesh/JRT/JRTKDTree.h"
+#include "mesh/JRT/JRTKDTreeBuilder.h"
+#include "mesh/JRT/JRTHeuristicKDTreeBuilder.h"
+#include "mesh/JRT/JRTH2KDTreeBuilder.h"
 
 
 JRTCore::JRTCore() : m_pTree(NULL), m_pHitArray(new TootleRayHit[5]), m_nArraySize(5)

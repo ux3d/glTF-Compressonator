@@ -2,7 +2,9 @@ include("${cmake_utils}")
 include("${cmake_platform}")
 
 add_sources("source/*.cpp" "target_sources")
+add_sources("source/JRT/*.cpp" "target_sources")
 add_sources("include/mesh/*.h" "target_sources")
+add_sources("include/JRT/mesh/*.h" "target_sources")
 add_include_folder("include" "target_includes")
 
 add_library(mesh OBJECT "${target_sources}")

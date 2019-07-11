@@ -11,8 +11,8 @@
 #include "JRTTriangleIntersection.h"
 #include "JRTCore.h"
 
-#ifdef _LINUX
-    #include "../../Header/CMP_Mesh/aligned_malloc.h"
+#if defined(PLATFORM_IS_LINUX) || defined(PLATFORM_IS_MACOS)
+    #include "mesh/aligned_malloc.h"
     #define _aligned_malloc aligned_malloc
     #define _aligned_free aligned_free
 #endif

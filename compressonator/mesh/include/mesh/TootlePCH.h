@@ -13,7 +13,7 @@
     #endif
 #endif
 
-#ifdef _LINUX
+#if defined(PLATFORM_IS_LINUX) || defined(PLATFORM_IS_MACOS)
     #define __cdecl
     #define _isnan(x) isnan(x)
     #define _finite(x) finite(x)

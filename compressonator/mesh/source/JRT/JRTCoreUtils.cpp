@@ -3,10 +3,10 @@
 /// \author AMD Developer Tools Team
 /// \file
 ****************************************************************************************/
-#include "TootlePCH.h"
-#include "JRTCommon.h"
-#include "JRTCoreUtils.h"
-#include "JRTMesh.h"
+#include "mesh/TootlePCH.h"
+#include "mesh/JRT/JRTCommon.h"
+#include "mesh/JRT/JRTCoreUtils.h"
+#include "mesh/JRT/JRTMesh.h"
 
 
 // These arrays are used to implement the UCOMP, VCOMP, WCOMP macros

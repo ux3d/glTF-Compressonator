@@ -3,11 +3,11 @@
 /// \author AMD Developer Tools Team
 /// \file
 ****************************************************************************************/
-#include "TootlePCH.h"
-#include "JRTCommon.h"
-#include "JRTKDTree.h"
-#include "JRTH2KDTreeBuilder.h"
-#include "JRTMesh.h"
+#include "mesh/TootlePCH.h"
+#include "mesh/JRT/JRTCommon.h"
+#include "mesh/JRT/JRTKDTree.h"
+#include "mesh/JRT/JRTH2KDTreeBuilder.h"
+#include "mesh/JRT/JRTMesh.h"
 
 static const int INTERSECT_COST = 5;
 

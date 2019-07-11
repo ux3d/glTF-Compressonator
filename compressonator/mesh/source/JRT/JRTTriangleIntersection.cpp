@@ -3,12 +3,12 @@
 /// \author AMD Developer Tools Team
 /// \file
 ****************************************************************************************/
-#include "TootlePCH.h"
-#include "JRTCommon.h"
-#include "JRTCoreUtils.h"
-#include "JRTTriangleIntersection.h"
+#include "mesh/TootlePCH.h"
+#include "mesh/JRT/JRTCommon.h"
+#include "mesh/JRT/JRTCoreUtils.h"
+#include "mesh/JRT/JRTTriangleIntersection.h"
 
-#include "JMLSSEVec.h"
+#include "math/JMLSSEVec.h"
 #include <assert.h>
 #include <math.h>
 #include <float.h>
