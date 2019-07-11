@@ -1,0 +1,77 @@
+function(cmake_option option description default)
+	option(${option} description ${default})
+	if (NOT ${UX3D_DEFINES_PRINTED})
+		if(${option})
+			message(STATUS "'${option}' is TRUE")
+		else()
+			message(STATUS "'${option}' is FALSE")
+		endif()
+	endif()
+endfunction()
+
+function(compiler_define define description default)
+	cmake_option("${define}" "${description}" "${default}")
+	if(${define})
+		add_definitions(-D${define})
+	endif()
+endfunction()
+
+set(UX3D_CPP_VERSION 14 CACHE STRING "")
+
+if (NOT ${UX3D_DEFINES_PRINTED})
+	message(STATUS "Minimum C++ version specified by 'defines.cmake': ${UX3D_CPP_VERSION}")
+	message(STATUS)
+	message(STATUS "Compiler definitions added by 'defines.cmake':")
+endif()
+compiler_define(UX3D_NO_LOG "" OFF)
+compiler_define(UX3D_NO_ASSERT "" OFF)
+compiler_define(UX3D_NO_DEBUG_HEAP "" OFF)
+compiler_define(UX3D_SERIAL_LOOPS "" OFF)
+
+compiler_define(GLM_FORCE_SWIZZLE "" OFF)
+compiler_define(GLM_FORCE_LEFT_HANDED "" ON)
+
+compiler_define(TBB_BUILD_TESTS "" OFF)
+#compiler_define(TBB_BUILD_SHARED "" OFF)
+compiler_define(TBB_BUILD_STATIC "" ON)
+
+if (NOT ${UX3D_DEFINES_PRINTED})
+	message(STATUS)
+	message(STATUS "CMake options added by 'defines.cmake':")
+endif()
+cmake_option(UX3D_TESTING "" ON)
+cmake_option(UX3D_DYNAMIC_LINKAGE "" ON)
+cmake_option(UX3D_NO_EXCEPT "" OFF)
+cmake_option(UX3D_USE_CLANG_TIDY "" OFF)
+
+# RUNTIME
+cmake_option(UX3D_MODULE_CORE "" ON)
+cmake_option(UX3D_MODULE_GPU "" ON)
+cmake_option(UX3D_MODULE_IMAGE "" ON)
+cmake_option(UX3D_MODULE_MATH "" ON)
+cmake_option(UX3D_MODULE_SCENE "" ON)
+cmake_option(UX3D_MODULE_ASYNC "" ON)
+cmake_option(UX3D_MODULE_SPIRV "" ON)
+cmake_option(UX3D_MODULE_DATAFLOW "" ON)
+
+# TOOLS
+cmake_option(UX3D_MODULE_FILESYSTEM "" ON)
+cmake_option(UX3D_MODULE_GLTF "" ON)
+cmake_option(UX3D_MODULE_IMAGEIO "" ON)
+cmake_option(UX3D_MODULE_LOGGING "" ON)
+
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+add_definitions(-DUX3D_IS_APPLE=1 )
+elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+add_definitions(-DUX3D_IS_WINDOWS=1 )
+elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+add_definitions(-DUX3D_IS_LINUX=1 )
+endif()
+
+
+if (UX3D_NO_EXCEPT)
+	add_definitions(-DTBB_USE_EXCEPTIONS=0)
+	add_definitions(-D__EXCEPTIONS=0)
+endif()
+
+set(UX3D_DEFINES_PRINTED TRUE CACHE INTERNAL "")

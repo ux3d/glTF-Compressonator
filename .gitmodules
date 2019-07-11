@@ -1,25 +1,25 @@
-[submodule "Common/Lib/Ext/tinyxml"]
-	path = Common/Lib/Ext/tinyxml
+[submodule "third_party/Lib/Ext/tinyxml"]
+	path = third_party/Lib/Ext/tinyxml
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-tinyxml-2.6.2.git
-[submodule "Common/Lib/Ext/OpenGL"]
-	path = Common/Lib/Ext/OpenGL
+[submodule "third_party/Lib/Ext/OpenGL"]
+	path = third_party/Lib/Ext/OpenGL
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-OpenGL.git
-[submodule "Common/Lib/Ext/OpenCV"]
-	path = Common/Lib/Ext/OpenCV
+[submodule "third_party/Lib/Ext/OpenCV"]
+	path = third_party/Lib/Ext/OpenCV
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-OpenCV-2.49.git
-[submodule "Common/Lib/Ext/Boost"]
-	path = Common/Lib/Ext/Boost
+[submodule "third_party/Lib/Ext/Boost"]
+	path = third_party/Lib/Ext/Boost
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-Boost-1.59.git
-[submodule "Common/Lib/AMD/APPSDK"]
-	path = Common/Lib/AMD/APPSDK
+[submodule "third_party/Lib/AMD/APPSDK"]
+	path = third_party/Lib/AMD/APPSDK
 	url = https://github.com/GPUOpen-Tools/common-lib-amd-APPSDK-3.0.git
-[submodule "Common/Lib/Ext/glew"]
-	path = Common/Lib/Ext/glew
+[submodule "third_party/Lib/Ext/glew"]
+	path = third_party/Lib/Ext/glew
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-glew-1.9.git
-[submodule "Common/Lib/Ext/zlib"]
-	path = Common/Lib/Ext/zlib
+[submodule "third_party/Lib/Ext/zlib"]
+	path = third_party/Lib/Ext/zlib
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-zlib-1.2.10.git
-[submodule "Common/Lib/Ext/OpenEXR"]
-	path = Common/Lib/Ext/OpenEXR
+[submodule "third_party/Lib/Ext/OpenEXR"]
+	path = third_party/Lib/Ext/OpenEXR
 	url = https://github.com/GPUOpen-Tools/common-lib-ext-OpenEXR-2.2.git
 
