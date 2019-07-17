@@ -33,7 +33,7 @@
 
 #define MIPSET_PIN_DATA_ID     "69AEBDB3-5F67-436D-82C2-724FDC4972DA"
 
-// #define USE_MIPSET_FACES
+#define USE_MIPSET_FACES
 
 extern void(*PrintStatusLine)(char *);
 extern void PrintInfo(const char* Format, ...);

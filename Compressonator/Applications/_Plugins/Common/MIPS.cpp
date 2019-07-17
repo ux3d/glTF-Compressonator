@@ -89,8 +89,10 @@ MipLevel* CMIPS::GetMipLevel(const MipSet* pMipSet, int nMipLevel,    int nFaceO
         {
             assert(nFaceOrSlice > 6);
             return NULL;
-        }        
-        return (pMipSet->m_pMipLevelTable)[nMipLevel * nDepth + nFaceOrSlice];
+        } 
+
+		index = nMipLevel * 6 + nFaceOrSlice;
+		return (pMipSet->m_pMipLevelTable)[index];
     case TT_VolumeTexture:
         while(whichMipLevel <= nMipLevel)
         {
@@ -134,7 +136,7 @@ int CMIPS::GetMaxMipLevels(int nWidth, int nHeight, int nDepth)
 
 bool CMIPS::AllocateMipLevelTable(MipLevelTable** ppMipLevelTable, int nMaxMipLevels, TextureType textureType, int nDepth, int& nLevelsToAllocate
 #ifdef USE_MIPSET_FACES
-    , int nFaces = 0
+    , int nFaces
 #endif
 )
 {
@@ -180,7 +182,7 @@ bool CMIPS::AllocateMipLevelTable(MipLevelTable** ppMipLevelTable, int nMaxMipLe
         return false;
     }
     //allocate the mipLevelTable (buncha pointers to miplevels)
-    *ppMipLevelTable = reinterpret_cast<MipLevelTable*>(calloc(nLevelsToAllocate, sizeof(MipLevel*)));
+    *ppMipLevelTable = reinterpret_cast<MipLevelTable*>(calloc(nLevelsToAllocate, sizeof(MipLevelTable)));
     assert(*ppMipLevelTable);
     return (*ppMipLevelTable != NULL);
 }
@@ -191,7 +193,7 @@ bool CMIPS::AllocateAllMipLevels(MipLevelTable* pMipLevelTable, TextureType /*te
     //allocate each MipLevel that the table points to
     for(int i=0; i<nLevelsToAllocate; i++)
     {
-        pMipLevelTable[i] = reinterpret_cast<MipLevel*>(calloc(sizeof(MipLevel), 1));
+        pMipLevelTable[i] = reinterpret_cast<MipLevel*>(calloc(1, sizeof(MipLevel)));
         //make sure it was allocated ok
         assert(pMipLevelTable[i]);
         if(!pMipLevelTable[i])
@@ -213,7 +215,7 @@ bool CMIPS::AllocateAllMipLevels(MipLevelTable* pMipLevelTable, TextureType /*te
 
 bool CMIPS::AllocateMipSet(MipSet* pMipSet, ChannelFormat channelFormat, TextureDataType textureDataType, TextureType textureType, int nWidth, int nHeight, int nDepth
 #ifdef USE_MIPSET_FACES
-    , int nFaces = 0
+    , int nFaces
 #endif
 )
 {

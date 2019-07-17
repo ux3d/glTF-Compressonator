@@ -849,6 +849,8 @@ int Plugin_KTX::TC_PluginFileLoadTexture(const char* pszFilename, MipSet* pMipSe
         return -1;
     }
 
+	pMipSet->m_format = CMP_FORMAT_Unknown;
+
     if (texinfo.compressed)
     {
         pMipSet->m_compressed   = true;
@@ -1027,11 +1029,8 @@ int Plugin_KTX::TC_PluginFileLoadTexture(const char* pszFilename, MipSet* pMipSe
             pMipSet->m_format = CMP_FORMAT_DXT5_xGxR;
             pMipSet->m_TextureDataType = TDT_ARGB;
             break;
-           default:
-               if (KTX_CMips)
-                   KTX_CMips->PrintError(("Error(%d): KTX Plugin ID(%d) unsupported GL format %x\n"), EL_Error, IDS_ERROR_UNSUPPORTED_TYPE, fheader.glFormat);
-              fclose(pFile);
-              return -1;
+         default:
+			   break;
         }
     }
     else
@@ -1107,6 +1106,10 @@ int Plugin_KTX::TC_PluginFileLoadTexture(const char* pszFilename, MipSet* pMipSe
                 pMipSet->m_format = CMP_FORMAT_RG_16F;
                 pMipSet->m_TextureDataType = TDT_RG;
                 break;
+			case GL_RGB:
+				pMipSet->m_format = CMP_FORMAT_ARGB_16F; // (FW) there is no CMP_FORMAT_RGB_16F
+				pMipSet->m_TextureDataType = TDT_XRGB;
+				break;
             case GL_RGBA:
                 pMipSet->m_format = CMP_FORMAT_ARGB_16F;
                 pMipSet->m_TextureDataType = TDT_ARGB;
@@ -1135,6 +1138,10 @@ int Plugin_KTX::TC_PluginFileLoadTexture(const char* pszFilename, MipSet* pMipSe
                 pMipSet->m_format = CMP_FORMAT_RG_32F;
                 pMipSet->m_TextureDataType = TDT_RG;
                 break;
+			case GL_RGB:
+				pMipSet->m_format = CMP_FORMAT_RGB_32F;
+				pMipSet->m_TextureDataType = TDT_XRGB;
+				break;
             case GL_RGBA:
                 pMipSet->m_format = CMP_FORMAT_ARGB_32F;
                 pMipSet->m_TextureDataType = TDT_ARGB;
@@ -1146,14 +1153,18 @@ int Plugin_KTX::TC_PluginFileLoadTexture(const char* pszFilename, MipSet* pMipSe
                 break;
             }
             break;
-            break;
         default:
-            if (KTX_CMips)
-                KTX_CMips->PrintError(("Error(%d): KTX Plugin ID(%d) unsupported GL format %x\n"), EL_Error, IDS_ERROR_UNSUPPORTED_TYPE, fheader.glFormat);
-            fclose(pFile);
-            return -1;
+			break;
         }
     }
+
+	if (pMipSet->m_format == CMP_FORMAT_Unknown)
+	{
+		if (KTX_CMips)
+			KTX_CMips->PrintError(("Error(%d): KTX Plugin ID(%d) unsupported GL format %x\n"), EL_Error, IDS_ERROR_UNSUPPORTED_TYPE, fheader.glFormat);
+		fclose(pFile);
+		return -1;
+	}
 
     switch (texinfo.glTarget) 
     {
