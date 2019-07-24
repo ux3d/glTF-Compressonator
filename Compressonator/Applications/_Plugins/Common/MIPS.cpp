@@ -371,7 +371,7 @@ void CMIPS::FreeMipSet(MipSet* pMipSet)
                 nTotalOldMipLevels = pMipSet->m_nMaxMipLevels;
                 break;
             case TT_CubeMap:
-                nTotalOldMipLevels = pMipSet->m_nMaxMipLevels * pMipSet->m_nDepth;
+                nTotalOldMipLevels = pMipSet->m_nMaxMipLevels * pMipSet->m_nDepth; // ?? (FW) 6 faces needed
                 break;
             case TT_VolumeTexture:        
                 for(int depth=pMipSet->m_nDepth, mipLevels=0;
